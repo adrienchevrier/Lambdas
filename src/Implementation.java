@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 /**
  *
  * @author Nicolas
- */
+ *//*
 public class Implementation implements Seq {
 
     @Override
@@ -59,3 +59,4 @@ public class Implementation implements Seq {
 }
 
 }
+*/

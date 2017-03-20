@@ -11,24 +11,4 @@ import java.util.function.Consumer;
  *
  * @author Nicolas
  */
-public class Nil implements Seq {
-    
-    public Nil() {
-        
-        //empty
-    }    
 
-    @Override
-    public void forEach(Consumer consumer) {
-        /*To change body of generated methods, choose Tools | Templates.*/
-        throw new UnsupportedOperationException("Not supported yet.");
-
-    }
-
-    @Override
-    public void display() {
-        /*To change body of generated methods, choose Tools | Templates.*/
-        throw new UnsupportedOperationException("Not supported yet.");
-
-    }
-}

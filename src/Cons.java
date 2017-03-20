@@ -12,26 +12,4 @@ import java.util.function.Consumer;
  *
  * @author Nicolas
  */
-public class Cons implements Seq {
-    
-    private final Object element;
-    private final Seq next;
-    
-    public Cons (Object element, Seq next) {
-        
-        this.element = Objects.requireNonNull(element);
-        this.next = Objects.requireNonNull(next);
-    }
 
-    @Override
-    public void forEach(Consumer consumer) {
-        
-        consumer.accept(next);
-    }
-    
-    public void display ()
-    {
-        System.out.println(element);
-    }
-    
-}
