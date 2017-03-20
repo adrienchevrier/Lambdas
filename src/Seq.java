@@ -12,8 +12,8 @@ import java.util.function.Consumer;
  * @author Nicolas
  */
 public interface Seq {
-    //empty for now
-    
-    public void forEach(Consumer consumer); // we only put the prototype of the function here since it is an interface
-    public void display();                                       // it will be defined in the classes implementing the interface
+    /*we only put the prototype of the function here since it is an interface*/
+    public void forEach(Consumer consumer);
+    /*it will be defined in the classes implementing the interface*/
+    public void display();
 }

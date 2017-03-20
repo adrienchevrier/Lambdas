@@ -12,16 +12,16 @@ public class Teacher {
     private final String name;
     private final Gender gender;
 
-    public Teacher(String name, Gender gender) {
+    private Teacher(String name, Gender gender) {
         this.name = name;
         this.gender = gender;
     }
 
-    public Gender getGender() {
+    private Gender getGender() {
         return gender;
     }
 
-    public enum Gender{
+    private enum Gender{
         MALE,
         FEMALE
     }

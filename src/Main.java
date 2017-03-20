@@ -16,8 +16,12 @@ public class Main {
     public static void main(String[] args) {
         
         Seq seq = new Cons("hello",new Cons("world", new Nil()));
-        seq.display(); // We call the display function that is defined in the interface
-                       // and implemented in the seq class that implements the abstract Seq class
+        /*
+          We call the display function that is defined in the interface
+          and implemented in the seq class that implements
+          the abstract Seq class
+        */
+        seq.display();
                        
         
     }

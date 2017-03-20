@@ -20,11 +20,15 @@ public class Nil implements Seq {
 
     @Override
     public void forEach(Consumer consumer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        /*To change body of generated methods, choose Tools | Templates.*/
+        throw new UnsupportedOperationException("Not supported yet.");
+
     }
 
     @Override
     public void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        /*To change body of generated methods, choose Tools | Templates.*/
+        throw new UnsupportedOperationException("Not supported yet.");
+
     }
 }
