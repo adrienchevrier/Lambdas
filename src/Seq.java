@@ -1,5 +1,5 @@
-
 import java.util.Objects;
+import java.util.function.Consumer;
 
 
 /*
@@ -12,19 +12,17 @@ import java.util.Objects;
  *
  * @author Nicolas
  */
-public interface Seq {
+public interface Seq<T> {
     /*we only put the prototype of the function here since it is an interface*/
-    Seq forEach(Cons consumer);
+    void forEach(Consumer consumer);
 
     /*it will be defined in the classes implementing the interface*/
     void display();
-
     static Seq nil() {
         return new Nil();
     }
 
-    public Seq prepend(String str);
-
+    Seq prepend(T str);
 
 
     /*INNER CLASSES*/
@@ -33,30 +31,26 @@ public interface Seq {
       * an inner class can only exist within an instance of its outer class*/
 
     /*Cons class*/
-      class Cons implements Seq {
+      class Cons<T> implements Seq {
 
-        private final Object element;
+        private final T element;
         private final Seq next;
 
-        Cons(Object element, Seq next) {
+        Cons(T element, Seq next) {
 
-            this.element = Objects.requireNonNull(element);
+            this.element = Objects.requireNonNull((T) element);
             this.next = Objects.requireNonNull(next);
         }
 
-        /*Add new consumer at beginning of list*/
-        public Seq prepend(String str){
-            return new Cons(str,this);
-        }
+
+
 
         @Override
-        public Seq forEach(Cons consumer) {
-            /*Check class type of next element to find Nil*/
-            if (consumer.next.getClass()==((new Seq.Nil()).getClass())){
-                return consumer;
-            }
+        public void forEach(Consumer consumer) {
+            /*execute foreach with next element*/
 
-            return forEach((Cons) consumer.next);
+            consumer.accept(element);
+            next.forEach(consumer);
         }
 
         public void display ()
@@ -64,9 +58,15 @@ public interface Seq {
             System.out.println(element);
         }
 
+        /*Add new consumer at beginning of list*/
+        @Override
+        public Seq prepend(Object str) {
+            return  new Cons( str,this);
+        }
+
     }
     /*Nil class*/
-    class Nil implements Seq {
+    class Nil<T> implements Seq {
 
         Nil() {
 
@@ -74,16 +74,14 @@ public interface Seq {
         }
 
         /*Add new consumer at beginning of list*/
-        public Seq prepend(String str){
-            return new Cons(str,this);
+        @Override
+        public Seq prepend(Object str){
+            return  new Cons(str,this);
         }
 
         @Override
-        public Seq forEach(Cons consumer) {
-            return null;
+        public void forEach(Consumer consumer) {
         /*To change body of generated methods, choose Tools | Templates.*/
-
-
         }
 
         @Override
