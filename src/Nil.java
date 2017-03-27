@@ -7,8 +7,3 @@ import java.util.function.Consumer;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author Nicolas
- */
-

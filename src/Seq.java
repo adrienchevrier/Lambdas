@@ -12,7 +12,7 @@ import java.util.function.Consumer;
  *
  * @author Nicolas
  */
-public interface Seq<T> {
+interface Seq<T> {
     /*we only put the prototype of the function here since it is an interface*/
     void forEach(Consumer consumer);
 
@@ -38,7 +38,7 @@ public interface Seq<T> {
 
         Cons(T element, Seq next) {
 
-            this.element = Objects.requireNonNull((T) element);
+            this.element = Objects.requireNonNull( element);
             this.next = Objects.requireNonNull(next);
         }
 
@@ -61,7 +61,7 @@ public interface Seq<T> {
         /*Add new consumer at beginning of list*/
         @Override
         public Seq prepend(Object str) {
-            return  new Cons( str,this);
+            return  new Cons<>( str,this);
         }
 
     }
@@ -76,7 +76,7 @@ public interface Seq<T> {
         /*Add new consumer at beginning of list*/
         @Override
         public Seq prepend(Object str){
-            return  new Cons(str,this);
+            return  new Cons<>(str,this);
         }
 
         @Override

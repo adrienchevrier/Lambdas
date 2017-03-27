@@ -8,7 +8,7 @@
  *
  * @author Nicolas
  */
-public class Main {
+public class MainSeq {
 
     /**
      * @param args the command line arguments
